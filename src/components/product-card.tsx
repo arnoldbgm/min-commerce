@@ -14,6 +14,7 @@ export default function ProductCard({ product }: Props) {
       <p className={`text-sm font-semibold ${product.inStock ? "text-green-500" : "text-red-500"}`}>
         {product.inStock ? "En stock" : "Agotado"}
       </p>
+      <button className="bg-red-600">Agregar al carrito</button>
     </div>
   );
 }
