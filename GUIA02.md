@@ -55,7 +55,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Account {
@@ -126,6 +125,7 @@ DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?sslmode=require"
 Ahora, ejecuta el siguiente comando para que Prisma cree las tablas en tu base de datos PostgreSQL basándose en el esquema que definiste.
 
 ```bash
+npx prisma generate
 npx prisma db push
 ```
 
@@ -178,7 +178,7 @@ import NextAuth from "next-auth"
 import { AuthOptions } from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import { PrismaAdapter } from "@auth/prisma-adapter"
-import prisma from "@/lib/prisma" // Ajusta la ruta a tu cliente Prisma
+import prisma from "@src/lib/prisma" // Ajusta la ruta a tu cliente Prisma
 
 export const authOptions: AuthOptions = {
   // 1. Añade el adaptador de Prisma

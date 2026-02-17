@@ -6,6 +6,7 @@
 */
 
 import Link from "next/link"
+import LoginButton from "./LoginButton"
 
 export default function Header() {
    return (
@@ -57,6 +58,8 @@ export default function Header() {
                   </button>
                </div>
             </div>
+
+            <LoginButton />
          </div>
       </header>
    )
